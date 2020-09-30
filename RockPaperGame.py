@@ -4,7 +4,8 @@ userscore = 0
 comscore = 0
 while True:
     print("Enter choice \n 1. Rock \n 2. paper \n 3. scissor \n")
-    ch = int(input("User turn: "))
+    name=input("Enter your name: ")
+    ch = int(input(f"{name}'s turn: "))
     while ch > 3 or ch < 1:
         ch = int(input("enter valid input: "))
     if ch == 1:
@@ -13,7 +14,7 @@ while True:
         cname = 'paper'
     else:
         cname = 'scissor'
-    print("user choice is: " + cname)
+    print(f"{name}'s choice is: " + cname)
     print("\nNow its computer turn.......")
     cochoice = random.randint(1, 3)
     while cochoice == ch:
@@ -39,18 +40,18 @@ while True:
         print("scissor wins =>", end="")
         result = "scissor"
     if result == cname:
-        print("  User wins  ")
+        print(f"  {name} wins  ")
         userscore=userscore+1
-        print('And you score is {}'.format(userscore))
+        print('And your score is {}'.format(userscore))
     else:
         print("  Computer wins  ")
         comscore=comscore+1
         print('computer score is {}'.format(comscore))
 
 
-    print("Do you want to play again? (Y/N)")
+    print(f"{name}, Do you want to play again? (Y/N)")
     ans = input()
     if ans == 'n' or ans == 'N':
         break
 
-print("\nThanks for playing")
+print(f"\n{name}, Thanks for playing")
